@@ -1,0 +1,37 @@
+.section-testimonials-wrap {
+	background-image: url("../images/testimonials-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 10px;
+}
+
+.testimonials-content {
+	margin:0 110px;
+	text-align: center;
+
+	&__text {
+		@include font('ralewayLight', normal, 20px, #d8d8d8, linespace(35, 20));
+	}
+
+	&__link {
+		@include font('ralewayExtraBold', normal, 12px, $color-green, linespace(22, 12));
+		text-transform: uppercase;
+	}
+}
+
+.l-testimonials-content__link {
+	margin-top:10px;
+}
+
+@media screen and (max-width:1200px) {
+	.testimonials-content {
+		margin: 0 20px;
+	}
+}
+
+@media screen and (max-width:730px) {
+	.testimonials-content__text {
+		font-size: 16px;
+		line-height:linespace(35, 16);
+	}
+}

@@ -1,0 +1,59 @@
+.service-posts {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+	height:100%;
+}
+
+.service-post{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	max-width: 270px;
+	min-height: 312px;
+	padding: 40px 20px;
+	border: 4px double #e1e1e1;
+
+	&__title {
+		@include font("ralewayExtraBold", normal, 15px, $font-color, linespace(26, 15));
+		text-transform: uppercase;
+	}
+
+	&__icon {
+		margin-bottom: 30px;
+
+		&-1 {
+			@include sprite($service-icon-print);
+		}
+		&-2 {
+			@include sprite($service-icon-video);
+		}
+		&-3 {
+			@include sprite($service-icon-package);
+		}
+		&-4 {
+			@include sprite($service-icon-management);
+		}
+	}
+}
+
+.favorites-dish-description {
+	margin:25px 0 10px;
+	display: flex;
+	justify-content: space-between;
+	letter-spacing: letspace(50, 20);
+}
+
+
+
+@media screen and (max-width:1200px) {
+	.service-posts {
+		justify-content: center;
+	}
+
+	.service-post {
+		margin:20px;
+	}
+}

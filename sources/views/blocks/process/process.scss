@@ -1,0 +1,116 @@
+.section-process-wrap {
+	background-image: url("../images/process-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.l-process-text {
+	max-width: 75%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.process-text {
+	@include font('ralewayMedium', normal, 14px, #d0d0d0, linespace(25, 14));
+}
+
+.l-process-steps {
+	margin: 40px 36px 0;
+
+}
+
+.process-steps {
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.process-step {
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+
+	&__icon {
+		position: relative;
+
+		&::before{
+			content:'';
+			position: absolute;
+			top:50%;
+			right:120%;
+			height:1px;
+			width:205%;
+			background: #777;
+		}
+
+		&:hover {
+			cursor:pointer;
+			animation: iconChange .5s ease;
+		}
+
+		&_1 {
+			@include sprite($process-icon-1);
+
+			&:hover {
+				@include sprite($process-icon-1-hover);
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+		
+		&_2 {
+			@include sprite($process-icon-2);
+
+			&:hover {
+				@include sprite($process-icon-2-hover);
+			}
+		}
+
+		&_3 {
+			@include sprite($process-icon-3);
+
+			&:hover {
+				@include sprite($process-icon-3-hover);
+			}
+		}
+
+		&_4 {
+			@include sprite($process-icon-4);
+
+			&:hover {
+				@include sprite($process-icon-4-hover);
+			}
+		}
+	}
+
+	&__name {
+		@include font('ralewayExtraBold', normal, 14px, #ddd, linespace(22, 14));
+		text-transform: uppercase;
+		margin-top:6px; /* (10px) */
+	}
+}
+
+
+@keyframes iconChange {
+	0% { opacity:0; }
+	100% { opacity:1; }
+}
+
+@media screen and (max-width:1200px) {
+	.process-step__icon::before {
+		display: none;
+	}
+}
+
+@media screen and (max-width:700px) {
+	.process-steps {
+		flex-wrap:wrap;
+		justify-content: center;
+	}
+
+	.process-step {
+		margin:20px;
+	}
+}

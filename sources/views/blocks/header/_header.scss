@@ -1,0 +1,35 @@
+.header {
+	margin: 0 auto;
+	max-width:1170px;
+	display: flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	padding: 63px 0;
+
+	&__title {
+		@include font("ralewayExtraBold", normal, 35px, $font-color, 0);
+	}
+
+	&__text {
+		@include font("ralewayLight", normal, 25px, $font-color, linespace(22, 25));
+	}
+}
+
+@media screen and (max-width:795px) {
+	.header__title {
+		font-size: 25px;
+		line-height:linespace(25, 35);
+	}
+
+	.header__text {
+		font-size: 18px;
+		line-height:linespace(18, 25);
+	}
+}
+
+@media screen and (max-width:1200px) {
+	.header {
+		padding: 20px 40px;
+		text-align: center;
+	}
+}

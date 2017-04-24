@@ -1,0 +1,66 @@
+.journal-posts {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+
+.journal-post {
+	max-width: 370px;
+
+	&__img {
+		width:100%;
+	}
+}
+
+.journal-header {
+	display: flex;
+	flex-wrap:wrap;
+	// position: relative;
+	margin: 20px 0 15px;
+
+	&__date {
+		@include font("ralewayMedium", normal, 20px, #7a7a7a, linespace(12, 12));
+		display: flex;
+		flex-flow:column wrap;
+		justify-content: center;
+		margin-right: 15px;
+		width: 100%;
+		max-width: 46px;
+		height:46px;
+		text-align: center;
+		border: 1px solid #7a7a7a;
+		text-transform: uppercase;
+
+		&_littleFont {
+			font-size: 12px;
+		}
+	}
+
+	&__info {
+		// display:flex;
+	}
+
+	&__title {
+		@include font("ralewayExtraBold", normal, 16px, #606060, linespace(16, 16));
+		text-transform: capitalize;
+		height:20px;
+	}
+
+	&__link {
+		@include font("ralewayMedium", normal, 12px, $color-green, linespace(20, 12));
+		// position: absolute;
+		// left:60px;
+		// top:40px;
+	}
+}
+
+@media screen and (max-width:1200px) {
+	.journal-posts {
+		flex-wrap:wrap;
+		justify-content: center;
+	}
+
+	.journal-post {
+		margin:20px;
+	}
+}
